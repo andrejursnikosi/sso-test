@@ -1,9 +1,9 @@
 FROM registry.redhat.io/rh-sso-7/sso75-openshift-rhel8:latest
 
-COPY extensions/ojdbc8.jar /opt/eap/extensions/
-COPY extensions/postconfigure.sh /opt/eap/extensions/
-COPY extensions/actions.cli /opt/eap/extensions/
-COPY extensions/user-storage.jar /opt/eap/standalone/deployments/
+COPY ./extensions/ojdbc8.jar /opt/eap/extensions/
+COPY ./extensions/postconfigure.sh /opt/eap/extensions/
+COPY ./extensions/actions.cli /opt/eap/extensions/
+COPY ./extensions/user-storage.jar /opt/eap/standalone/deployments/
 USER root
 RUN chmod 774 /opt/eap/extensions/*.sh
 USER jboss
